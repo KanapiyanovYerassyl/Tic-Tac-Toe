@@ -189,7 +189,7 @@ const gameController = (function(playerOneName = "Player one", playerTwoName = "
       if (checkTieCondition()) {
          console.log("It's a tie");
          restartGame();
-         return;
+         return {result: "tie"};
       }
 
 
@@ -255,16 +255,13 @@ const screenController = (function(){
     const row = parseInt(target.dataset.row);
     const col = parseInt(target.dataset.column);
 
-    const result = gameController.playRound(row, col);
+    const {result,winner} = gameController.playRound(row, col) ?? {};
     updateScreen();
 
     if (result === "win") {
-      const winner = gameController.getPlayerOne().value === "O"
-        ? gameController.getPlayerOne()
-        : gameController.getPlayerTwo();
-      playerTurnDiv.textContent = `${winner.name} wins! Starting new round...`;
-    } else if (result === "tie") {
-      playerTurnDiv.textContent = "It's a tie! Starting new round...";
+    playerTurnDiv.textContent = `${winnerName} wins! Starting new round...`;
+    } else if (result?.result === "tie") {
+    playerTurnDiv.textContent = "It's a tie! Starting new round...";
     }
   };
 
