@@ -1,0 +1,164 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+html {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+li {
+    list-style-type: none;
+}
+
+ul{
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 0.3fr 3fr 0.3fr;
+    height: 100vh;
+}
+
+
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.main-body-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap:16px;
+}
+
+.player-name-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid;
+  padding: 12px;
+  background-color: #FED89A;
+}
+
+#player-name-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.input {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.input[type=text] {
+  background-color: #FEE0AE;
+}
+
+
+#start-button {
+  border-radius: 12px;
+  border: 0px;
+  background-color: #FCA311;
+  padding: 10px 40px 10px 40px;
+
+}
+
+#start-button:hover {
+  cursor: pointer;
+}
+
+.main-game-stats{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.score {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.score > .scores {
+  background-color: #FED89A;
+  padding: 8px;
+  border:1px solid;
+}
+
+.main-game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: #FED89A;
+}
+
+.cell:hover {
+    background-color: #FCA311;
+}
